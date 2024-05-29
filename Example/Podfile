@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '10.0'
+
+target 'SparkNetManager_Example' do
+  pod 'SparkNetManager', :path => '../'
+
+  target 'SparkNetManager_Tests' do
+    inherit! :search_paths
+
+    pod 'FBSnapshotTestCase' , '~> 2.1.4'
+  end
+end
