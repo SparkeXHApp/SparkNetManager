@@ -17,7 +17,7 @@ SparkNetManager is available through [CocoaPods](https://cocoapods.org). To inst
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'SparkNetManager'
+pod 'SparkNetManager', :git => "https://github.com/SparkeXHApp/SparkNetManager.git"
 ```
 
 ## Author
