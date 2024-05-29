@@ -1,0 +1,6 @@
+framework module SparkNetManager {
+  umbrella header "SparkNetManager-umbrella.h"
+
+  export *
+  module * { export * }
+}
