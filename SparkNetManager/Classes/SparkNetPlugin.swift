@@ -26,7 +26,8 @@ class CheckNetState: PluginType {
         if getUserDefValue("NetStatus") == "None" || getUserDefValue("NetStatus") == "UNKNOWN" || getUserDefValue("NetStatus") == "" {
             SparkNetManager.APIProvider.manager.session.delegateQueue.cancelAllOperations()
             DispatchQueue.main.async {
-                SVProgressHUD.showError(withStatus: "网络错误,请检查网络设置")
+                // 需求要求隐掉
+//                SVProgressHUD.showError(withStatus: "网络错误,请检查网络设置")
             }
         } else {
             if isShowLoading {
