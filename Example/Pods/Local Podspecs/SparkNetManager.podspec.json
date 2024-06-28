@@ -18,5 +18,16 @@
   "platforms": {
     "ios": "10.0"
   },
-  "source_files": "SparkNetManager/Classes/**/*"
+  "source_files": "SparkNetManager/Classes/**/*",
+  "dependencies": {
+    "Moya": [
+
+    ],
+    "HandyJSON": [
+
+    ],
+    "NVActivityIndicatorView": [
+
+    ]
+  }
 }

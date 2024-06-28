@@ -30,7 +30,7 @@
 /* Begin PBXFileReference section */
 		26E8F3B8907588F347724233 /* Pods_SparkNetManager_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SparkNetManager_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A0BC6A3B80E1F0B544153FD /* Pods-SparkNetManager_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SparkNetManager_Example.release.xcconfig"; path = "Target Support Files/Pods-SparkNetManager_Example/Pods-SparkNetManager_Example.release.xcconfig"; sourceTree = "<group>"; };
-		3F54FB1353F31A7960888551 /* SparkNetManager.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = SparkNetManager.podspec; path = ../SparkNetManager.podspec; sourceTree = "<group>"; };
+		3F54FB1353F31A7960888551 /* SparkNetManager.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SparkNetManager.podspec; path = ../SparkNetManager.podspec; sourceTree = "<group>"; };
 		5D604C1FA1525A6934254299 /* Pods-SparkNetManager_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SparkNetManager_Tests.debug.xcconfig"; path = "Target Support Files/Pods-SparkNetManager_Tests/Pods-SparkNetManager_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* SparkNetManager_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SparkNetManager_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -44,8 +44,8 @@
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		BAF50FD23CD523CCEF9FEE8D /* Pods-SparkNetManager_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SparkNetManager_Example.debug.xcconfig"; path = "Target Support Files/Pods-SparkNetManager_Example/Pods-SparkNetManager_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		DB0E830D04FE939314C3DA75 /* Pods-SparkNetManager_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SparkNetManager_Tests.release.xcconfig"; path = "Target Support Files/Pods-SparkNetManager_Tests/Pods-SparkNetManager_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		E156DD1F79323323C8164A18 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		E576375E26623B16B8D151F7 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		E156DD1F79323323C8164A18 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		E576375E26623B16B8D151F7 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		F2C485BA9EF026DEB610B11F /* Pods_SparkNetManager_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SparkNetManager_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -156,7 +156,6 @@
 				5D604C1FA1525A6934254299 /* Pods-SparkNetManager_Tests.debug.xcconfig */,
 				DB0E830D04FE939314C3DA75 /* Pods-SparkNetManager_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -214,10 +213,12 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = FNZ84EXWE9;
 						LastSwiftMigration = 0900;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = FNZ84EXWE9;
 						LastSwiftMigration = 0900;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -228,6 +229,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -332,10 +334,18 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-SparkNetManager_Example/Pods-SparkNetManager_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/SparkNetManager/SparkNetManager.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SparkNetManager.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -497,6 +507,7 @@
 			baseConfigurationReference = BAF50FD23CD523CCEF9FEE8D /* Pods-SparkNetManager_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = FNZ84EXWE9;
 				INFOPLIST_FILE = SparkNetManager/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -512,6 +523,7 @@
 			baseConfigurationReference = 2A0BC6A3B80E1F0B544153FD /* Pods-SparkNetManager_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = FNZ84EXWE9;
 				INFOPLIST_FILE = SparkNetManager/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -526,6 +538,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5D604C1FA1525A6934254299 /* Pods-SparkNetManager_Tests.debug.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = FNZ84EXWE9;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -548,6 +561,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DB0E830D04FE939314C3DA75 /* Pods-SparkNetManager_Tests.release.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = FNZ84EXWE9;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(inherited)",

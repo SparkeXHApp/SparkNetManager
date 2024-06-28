@@ -1,10 +1,22 @@
 PODS:
+  - Alamofire (5.9.1)
   - FBSnapshotTestCase (2.1.4):
     - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
   - FBSnapshotTestCase/Core (2.1.4)
   - FBSnapshotTestCase/SwiftSupport (2.1.4):
     - FBSnapshotTestCase/Core
-  - SparkNetManager (0.1.0)
+  - HandyJSON (5.0.2)
+  - Moya (15.0.0):
+    - Moya/Core (= 15.0.0)
+  - Moya/Core (15.0.0):
+    - Alamofire (~> 5.0)
+  - NVActivityIndicatorView (5.2.0):
+    - NVActivityIndicatorView/Base (= 5.2.0)
+  - NVActivityIndicatorView/Base (5.2.0)
+  - SparkNetManager (0.1.0):
+    - HandyJSON
+    - Moya
+    - NVActivityIndicatorView
 
 DEPENDENCIES:
   - FBSnapshotTestCase (~> 2.1.4)
@@ -12,15 +24,23 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - FBSnapshotTestCase
+    - HandyJSON
+    - Moya
+    - NVActivityIndicatorView
 
 EXTERNAL SOURCES:
   SparkNetManager:
     :path: "../"
 
 SPEC CHECKSUMS:
+  Alamofire: f36a35757af4587d8e4f4bfa223ad10be2422b8c
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
-  SparkNetManager: 1cd84c5a3a06569c16225b468328288ddebe15b8
+  HandyJSON: 9e4e236f5d2dbefad5155a77417bbea438201c03
+  Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
+  NVActivityIndicatorView: fe52a6a68664c2df8991d7d9e3d86d8d19453c53
+  SparkNetManager: 1c1b655edb9c8857934afd35882403721233c312
 
 PODFILE CHECKSUM: 346072c29784d60dacb910e73b1575278636661f
 

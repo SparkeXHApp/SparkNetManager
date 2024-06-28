@@ -7,10 +7,16 @@
 
 import Moya
 import HandyJSON
-import SVProgressHUD
+import NVActivityIndicatorView
 import Result
 
 class CheckNetState: PluginType {
+    
+    lazy var indicator: NVActivityIndicatorView = {
+        let view = NVActivityIndicatorView()
+        view.type = .circleStrokeSpin
+        return view
+    }()
     
     fileprivate func getUserDefValue(_ key: String) -> String? {
         if let value = UserDefaults.standard.object(forKey: key) as? String {
@@ -32,28 +38,35 @@ class CheckNetState: PluginType {
         } else {
             if isShowLoading {
                 DispatchQueue.main.async {
-                    SVProgressHUD.show()
+                    self.indicator.bounds = CGRect(x: 0, y: 0, width: 100, height: 100)
+                    self.indicator.center = UIApplication.shared.windows.first( $0.isKeyWindow )!.center
+                    UIApplication.shared.windows.first { $0.isKeyWindow }?.addSubview(self.indicator)
+                    self.indicator.startAnimating()
                 }
             }
         }
     }
     
     func didReceive(_ result: Result<Response, MoyaError>, target: TargetType) {
-        switch result {
-        case .success(let response):
-            if let json = try? response.mapJSON(),
-               let obj = JSONDeserializer<SparkNetResponse>.deserializeFrom(dict: json as? [String: Any]) {
-                if obj.code == 200 {
-                    if let res = obj.results, res.ret == 100 {
-                        DispatchQueue.main.async {
-                            SVProgressHUD.dismiss()
-                        }
-                    }
-                }
-            }
-            break
-        case .failure(_):
-            break
+        DispatchQueue.main.async {
+            self.indicator.stopAnimating()
+            self.indicator.removeFromSuperview()
         }
+//        switch result {
+//        case .success(let response):
+//            if let json = try? response.mapJSON(),
+//               let obj = JSONDeserializer<SparkNetResponse>.deserializeFrom(dict: json as? [String: Any]) {
+//                if obj.code == 200 {
+//                    if let res = obj.results, res.ret == 100 {
+//                        DispatchQueue.main.async {
+//                            SVProgressHUD.dismiss()
+//                        }
+//                    }
+//                }
+//            }
+//            break
+//        case .failure(_):
+//            break
+//        }
     }
 }

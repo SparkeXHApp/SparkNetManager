@@ -10,7 +10,6 @@ import UIKit
 import HandyJSON
 import Moya
 import Result
-import SVProgressHUD
 
 /// 超时时长
 private(set) var timeoutInterval: Double = 30
