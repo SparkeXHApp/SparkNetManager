@@ -52,7 +52,7 @@ class CheckNetState: PluginType {
                         keyWindow = UIApplication.shared.keyWindow
                     }
                     self.indicator.center = keyWindow!.center
-                    keyWindow.addSubview(self.indicator)
+                    keyWindow?.addSubview(self.indicator)
                     self.indicator.startAnimating()
                 }
             }
