@@ -13,8 +13,9 @@ import Result
 class CheckNetState: PluginType {
     
     lazy var indicator: NVActivityIndicatorView = {
-        let view = NVActivityIndicatorView()
-        view.type = .circleStrokeSpin
+        let view = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 100, height: 100), type: .circleStrokeSpin, padding: 10.0)
+        view.layer.cornerRadius = 10.0
+        view.layer.masksToBounds = true
         return view
     }()
     
@@ -38,9 +39,20 @@ class CheckNetState: PluginType {
         } else {
             if isShowLoading {
                 DispatchQueue.main.async {
-                    self.indicator.bounds = CGRect(x: 0, y: 0, width: 100, height: 100)
-                    self.indicator.center = UIApplication.shared.windows.first( $0.isKeyWindow )!.center
-                    UIApplication.shared.windows.first { $0.isKeyWindow }?.addSubview(self.indicator)
+                    var keyWindow: UIWindow?
+                    if #available(iOS 13.0, *) {
+                        if let window = UIApplication.shared.delegate?.window {
+                            keyWindow = window
+                        } else {
+                            let sence = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene
+                            let window = sence?.windows.first(where: { $0.isKeyWindow })
+                            keyWindow = window ?? UIWindow()
+                        }
+                    } else {
+                        keyWindow = UIApplication.shared.keyWindow
+                    }
+                    self.indicator.center = keyWindow.center
+                    keyWindow.addSubview(self.indicator)
                     self.indicator.startAnimating()
                 }
             }
